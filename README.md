@@ -1,1 +1,1 @@
-This is the a portfolio on Adjoa with HTML and CSS only 
+This is the  portfolio on Adjoa with HTML and CSS only 
