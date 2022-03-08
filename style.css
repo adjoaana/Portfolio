@@ -1,0 +1,269 @@
+:root{
+   --mintLight: rgba(199, 255, 237, 1); 
+   --mintVeryLight: rgba(216, 255, 219, 1); 
+   --teal: rgba(0, 143, 140, 1); 
+   --tealDark: rgba(1, 89, 88, 1); 
+   --black : rgba(2, 53, 53, 1); 
+   --plum: rgb(89, 57, 84);
+    --brightGreen : rgb(12, 242, 93);
+   --darkBlue : rgb(3, 65, 89);
+
+   /* fonts */
+   --font-sans : 'Oxygen', sans-serif;
+   --font-mono : 'Oxygen Mono', monospace;
+
+   /* fontsize */
+   --font-r : 1.3rem;
+
+}
+
+html{
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--black);
+    color: var(--mintVeryLight);
+    font-family: var(--font-sans);
+    font-size: var(--font-r);
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+a{
+    color: var(--teal);
+}
+a:hover{
+    color: var(--plum);
+    text-decoration: none;
+    /* leave links underlines for accessibility */
+}
+img{
+    width: 100%;
+    /* this is to get it to scale in the grid */
+}
+    /* intro styles */
+    #intro{
+        padding: 4rem 1rem 10rem 1rem;
+        /* top right bottom left */
+        max-width: 1200px;
+        margin: 0 auto ;
+    }
+    #intro p{
+        font-size: 1rem;
+        line-height: 1.5;
+        /* line height is an absolute when we give it rem. 1.5 will blow up proportionately */
+
+    }
+    #intro .name{
+        font-family: var(--font-mono);
+    }
+    .name span{
+        display: block;
+        font-family: var(--font-sans);
+        font-size: 4rem;
+        color: var(--teal);
+    }
+    #intro h2{
+        font-size: 4rem;
+    }
+
+
+/* contact styles */
+    #contact{
+        background-color: var(--tealDark);
+    }
+    .contact_box{
+        width: 400px;
+        margin: 0 auto;
+        /* works with width  */
+        padding: 4rem 0;
+        text-align: center;
+    }
+    .contact_box a:hover{
+        color: var(--mintVeryLight);
+        background-color: var(--teal);
+    }
+    .contact_box h2{
+        padding-bottom: 2rem;
+    }
+
+/* navbar styles */
+    nav{
+        font-family: var(--font-mono);
+        font-size: 80%; 
+        /* base font size by 80% */
+        padding: 1rem;
+    }
+    /* read selectors from right to left */
+    nav h1 a{
+        font-family: var(--font-sans);
+    }
+    nav ul{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        /* this is for the horizontal space  */
+        align-items: center;
+        gap: 2rem;
+        /* this is for the vertical which is cross axis*/
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+    }
+    nav li:first-child{
+        flex-basis: 100%;
+        /* this makes the take up a percentage of the space in flexbox */
+        text-align: center;
+    }
+    nav a{
+        display: block;
+        /* to get all the area to be clickable */
+        color: var(--mintVeryLight);
+        text-decoration: none;
+    }
+    nav a:hover{
+        color: var(--plum);
+    }
+     nav .icon{
+         width:30px;
+    }
+    .btn{
+        background-color: var(--plum);
+        padding: 0.5rem;
+        border-radius: 5px;
+        font-family: var(--font-mono);
+        cursor: pointer;
+
+    }
+    .btn:hover{
+        color: var(--mintVeryLight);
+        background-color: var(--teal);
+    }
+    .gradient{
+    height: 3px;
+    background: linear-gradient(90deg, rgba(121,9,113,1) 5%, rgba(0,241,255,1) 100%); 
+}
+footer ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    /* this is for the horizontal space  */
+    align-items: center;
+    gap: 3rem;
+    /* this is for the vertical which is cross axis*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+}
+footer ul img{
+    width:50px ;
+    text-align: center;
+}
+#projects{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#projects h2{
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5rem);
+}
+#projects h3{
+    color: var(--brightGreen);
+}
+#projects h4{
+    font-size: 1rem;
+    font-family: var(--font-mono);
+}
+.projects_box{
+    background-color: var(--darkBlue);
+ padding: 4rem 1rem;
+}
+#projects ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0; 
+}
+#projects img{
+    margin: 2rem 0 4rem 0 ;
+    border-left:2px solid var(--mintLight) ;
+    border-top:2px solid var(--mintLight) ;
+    border-radius: 25px;
+    padding: 1rem;
+}
+/* reverse styling */
+
+
+
+ @media(min-width : 550px){
+     article{
+         display: grid;
+         grid-template-columns: repeat(10, 1fr) ;
+         gap: 1rem;
+     }
+     .text{
+         grid-column: 5/11;
+         grid-row: 1/2;
+         order: 2;
+         text-align: right;
+     }
+     .reverse{
+        grid-column: 5/11;
+        grid-row: 1/2;
+        order: 1;
+        text-align: right;
+     }
+     #projects img{
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    #projects .reverse .text{
+        grid-column: 1/7;
+        order: 2;
+        text-align: left;
+    
+    }
+    #projects .reverse img{
+        grid-column: 6/11;
+        grid-row: 1/2;
+    }
+    #projects .reverse ul{
+        justify-content: flex-start;
+    }
+ }
+.black_box{
+    background-color: var(--black);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    /* color: var(--mintVeryLight); */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+    /* media query */
+    @media(min-width: 850px){
+        /* best point */
+        nav{
+            max-width: 1200px;
+            margin-bottom: 0 auto;
+    
+        }
+        nav li:first-child{
+            flex-basis: auto;
+            text-align: left;
+            margin-right: auto;
+        }
+ 
+    }
